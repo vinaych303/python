@@ -1,9 +1,0 @@
-# Convert decimal to binary, octal, and hexadecimal
-def convert_decimal(dec):
-    print(f"The decimal value of {dec} is:")
-    print(f"In binary: {bin(dec)}")
-    print(f"In octal: {oct(dec)}")
-    print(f"In hexadecimal: {hex(dec)}")
-
-decimal_number = int(input('enter no.))
-convert_decimal(decimal_number)
