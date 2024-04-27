@@ -1,0 +1,31 @@
+inventory = {}
+
+while True:
+    action = input("Enter what you want to do? add, remove, display, quit: ")
+    
+    if action == 'add':
+        item = input("Enter item name: ")
+        quantity = int(input("Enter your quantity: "))
+        if item in inventory:
+            inventory[item] += quantity
+        else:
+            inventory[item] = quantity
+    elif action == 'remove':
+        item = input("Enter the name of the item you want to remove: ")
+        quantity = int(input("Enter the quantity you want to remove: "))
+        if item in inventory and inventory[item] >= quantity:
+            inventory[item] -= quantity
+        elif item in inventory and inventory[item] < quantity:
+            print(f"There are only {inventory[item]} of {item} left in inventory.")
+        else:
+            print("There is no such item in inventory.")
+    elif action == 'display':
+        print("Inventory:")
+        for key, value in inventory.items():
+            print(f"{key}: {value}")
+    elif action == 'quit':
+        break
+    else:
+        print("Invalid entry, please try again.")
+
+print("Thank you for using the inventory management system!")
